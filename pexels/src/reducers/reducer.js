@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         images: action.payload,
         isFetching: false,
-        error: ""
+        error: "",
       };
       case FETCH_IMAGE_FAILURE:
           return {

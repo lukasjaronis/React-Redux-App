@@ -8,11 +8,18 @@ const PexelGetter = props => {
     return (
         <div>
         <h1>Pexel Images</h1>
+
         {!props.images && !props.isFetching && <p>Search an image!</p>}
+
         {props.isFetching && (
             <Loader type="Puff" color='red' height={100} width={100} />
         )}
-        {props.images && <p>props.images.images</p>}
+
+        {/*props.images && <div>{props.images.images}</div>*/}
+        
+        {props.images && props.images.map(img => (<div key={img.id}><img src={img.src.large} /></div>))}
+
+
         <button onClick={props.getImage}>Search</button>
         </div>
     )
